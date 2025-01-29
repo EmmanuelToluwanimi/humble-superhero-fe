@@ -9,6 +9,11 @@ The frontend of the **Humble Superhero API** is built with **React** and allows 
 - **Validation**: Zod (for input validation)
 - **API Communication**: Fetch API
 
+## Deployment
+This project is deployed on Render. You can access the API at the following URL:
+
+[https://humble-superhero-fe.onrender.com](https://humble-superhero-fe.onrender.com)
+
 ## How to Run the App Locally
 
 1. Clone the repository:

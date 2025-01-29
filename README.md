@@ -39,5 +39,22 @@ This project is deployed on Render. You can access the API at the following URL:
   
 ## Future Improvements
 - **Error Handling**: Implement better error handling for API responses.
-- **Styling**: Improve the UI with better styling, possibly using a CSS framework like Tailwind CSS or Material-UI.
-- **Persistent Storage**: Enhance the app with persistence by saving the superhero data to a backend API or local storage.
+- **Styling**: Improve the UI with better styling.
+- **State Management**: Enhance the app by using state management libraries for storing data globally and data fetching with libraries such as Tanstack React Query, Redux, RTK Query.
+
+## Collaboration Note
+
+To improve or expand this task, I would collaborate with a teammate by:
+1. **Code Reviews**: Regularly reviewing each other's code to ensure quality and consistency.
+2. **Pair Programming**: Working together on complex features to leverage our combined knowledge and skills.
+3. **Task Breakdown**: Dividing larger tasks into smaller, manageable pieces and assigning them based on each team member's strengths.
+4. **Communication**: Keeping open lines of communication through regular stand-ups, meetings, and using collaboration tools like Slack or Microsoft Teams.
+5. **Documentation**: Ensuring all changes are well-documented and updating the README and other relevant documentation as needed.
+
+## If I had more time
+
+If I had more time, I would:
+1. **Improve UI/UX**: Enhance the user interface and user experience by adding animations, better error handling, and more responsive design.
+3. **Optimize Performance**: Look into optimizing the performance of the application, especially for larger datasets.
+4. **Explore New Features**: Add new features such as filtering, sorting, and searching heroes.
+7. **Continuous Integration**: Set up continuous integration and continuous deployment (CI/CD) pipelines to automate testing and deployment processes.

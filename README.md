@@ -1,50 +1,38 @@
-# React + TypeScript + Vite
+# Humble Superhero API - Frontend (React)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project Overview
+The frontend of the **Humble Superhero API** is built with **React** and allows users to interact with the superhero data provided by the backend. Users can add new superheroes and view a sorted list based on humility score in real-time.
 
-Currently, two official plugins are available:
+## Tech Stack
+- **Frontend**: React (with TypeScript)
+- **State Management**: React's built-in hooks (useState, useEffect)
+- **Validation**: Zod (for input validation)
+- **API Communication**: Fetch API
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## How to Run the App Locally
 
-## Expanding the ESLint configuration
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/emmanueltoluwanimi/humble-superhero-fe.git
+   cd humble-superhero-fe
+   ```
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+2. Install the dependencies:
+   ```bash
+   yarn
+   ```
 
-- Configure the top-level `parserOptions` property like this:
+3. Start the development server:
+   ```bash
+   yarn dev
+   ```
+   This will start the backend API server at `http://localhost:5173`.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Features
+- **Add Superhero**: A form allows users to add a new superhero by entering their name, superpower, and humility score.
+- **View Superheroes**: The list of superheroes is displayed, sorted by humility score in descending order.
+  
+## Future Improvements
+- **Error Handling**: Implement better error handling for API responses.
+- **Styling**: Improve the UI with better styling, possibly using a CSS framework like Tailwind CSS or Material-UI.
+- **Persistent Storage**: Enhance the app with persistence by saving the superhero data to a backend API or local storage.

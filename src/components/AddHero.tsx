@@ -15,6 +15,7 @@ export default function AddHeroForm({
 }) {
   const [formData, setFormData] = useState<Omit<ISuperhero, "id">>(defaultHero);
   const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData((prev) => ({
@@ -36,6 +37,7 @@ export default function AddHeroForm({
       setError(validation.message);
       return;
     }
+    setLoading(true);
 
     try {
       await addHeroApi({
@@ -49,6 +51,7 @@ export default function AddHeroForm({
       console.log(err);
       setError("Error adding heroes");
     }
+    setLoading(false);
   };
 
   return (
@@ -85,7 +88,7 @@ export default function AddHeroForm({
       />
       {error && <p className="text-red-500 text-sm">{error}</p>}
       <button type="submit" className="p-2 bg-blue-500 text-white rounded">
-        Add Superhero
+        {loading ? "Processing..." : "Add Superhero"}
       </button>
     </form>
   );

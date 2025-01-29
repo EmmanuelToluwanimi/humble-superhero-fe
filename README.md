@@ -58,3 +58,4 @@ If I had more time, I would:
 3. **Optimize Performance**: Look into optimizing the performance of the application, especially for larger datasets.
 4. **Explore New Features**: Add new features such as filtering, sorting, and searching heroes.
 7. **Continuous Integration**: Set up continuous integration and continuous deployment (CI/CD) pipelines to automate testing and deployment processes.
+8. **Pagination**: Implement pagination to handle large lists of superheroes efficiently.

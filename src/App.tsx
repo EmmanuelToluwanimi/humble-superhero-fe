@@ -1,35 +1,43 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect, useState } from "react";
+import "./App.css";
+import AddHeroForm from "./components/AddHero";
+import HeroesList from "./components/HeroesList";
+import { ISuperhero } from "./utils/interface";
+import { fetchHeroesApi } from "./utils/api";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [heroes, setHeroes] = useState<ISuperhero[]>([]);
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState<boolean>(false);
+
+  async function GetHeroes() {
+    setLoading(true);
+    try {
+      const data = await fetchHeroesApi();
+      setHeroes(data);
+    } catch (err) {
+      console.log(err);
+      setError("Failed to load superheroes");
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  useEffect(() => {
+    GetHeroes();
+  }, []);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <main>
+      <div className="max-w-lg mx-auto mt-10">
+        <h1 className="text-2xl font-bold text-center mb-4">
+          Humble Superheroes
+        </h1>
+        <AddHeroForm setHeroes={(data) => setHeroes(data)} />
+        <HeroesList heroes={heroes} error={error ?? ""} loading={loading} />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </main>
+  );
 }
 
-export default App
+export default App;

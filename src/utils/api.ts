@@ -1,6 +1,6 @@
 import { ISuperhero } from "./interface";
 
-const API_URL = "http://localhost:3000/hero";
+const API_URL = "https://humble-superhero-be.onrender.com/hero";
 
 export async function fetchHeroesApi(): Promise<ISuperhero[]> {
   try {
